@@ -160,3 +160,50 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/chatbot-ui/node_modules
+/chatbot-ui/.pnp
+/chatbot-ui/.pnp.js
+.yarn/install-state.gz
+
+# testing
+/chatbot-ui/coverage
+
+# next.js
+/chatbot-ui/.next/
+/chatbot-ui/out/
+
+# production
+/chatbot-ui/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+/chatbot-ui/npm-debug.log*
+/chatbot-ui/yarn-debug.log*
+/chatbot-ui/yarn-error.log*
+
+# local env files
+/chatbot-ui/.env
+/chatbot-ui/.env*.local
+
+# vercel
+/chatbot-ui/.vercel
+
+# typescript
+*.tsbuildinfo
+/chatbot-ui/next-env.d.ts
+
+.VSCodeCounter
+tool-schemas
+/chatbot-ui/custom-prompts
+
+/chatbot-ui/sw.js
+sw.js.map
+/chatbot-ui/workbox-*.js
+/chatbot-ui/workbox-*.js.map
