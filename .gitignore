@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+backend/context/keys.json
+
 # C extensions
 *.so
 

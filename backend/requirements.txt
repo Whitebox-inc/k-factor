@@ -1,4 +1,7 @@
 langchain
+ai21
+firecrawl
+openperplex
 langgraph
 langchain_ai21
 requests
