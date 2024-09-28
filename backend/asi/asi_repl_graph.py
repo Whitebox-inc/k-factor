@@ -4,13 +4,14 @@ from langchain_ai21 import AI21LLM, AI21ContextualAnswers
 from langchain_core.prompts import PromptTemplate
 import json
 import logging
+import os
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Configure your JAMBA API key
-JAMBA_API_KEY = "your-jamba-api-key"
+JAMBA_API_KEY = os.environ.get("JAMBA_API_KEY")
 
 
 class LanguageModel:

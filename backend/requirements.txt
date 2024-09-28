@@ -1,0 +1,9 @@
+langchain
+langgraph
+langchain_ai21
+requests
+pytest
+pytest-mock
+python-dotenv
+matplotlib
+pandas
