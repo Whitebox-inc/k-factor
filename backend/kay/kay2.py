@@ -36,7 +36,7 @@ class KayAgent:
         """Custom LLM function using AI21's Jamba 1.5 Large model."""
         messages = [
             ChatMessage(content="You are a helpful AI assistant.", role="system"),
-            ChatMessage(content=prompt, role="user")
+            ChatMessage(content=prompt, role="user"),
         ]
         response = self.client.chat.completions.create(
             model="jamba-1.5-large",
@@ -64,27 +64,10 @@ class KayAgent:
         try:
             # Attempt to parse the response as JSON
             data = json.loads(response)
-            if isinstance(data, dict):
-                # Example: Create a bar chart if data contains numerical values
-                keys = list(data.keys())
-                values = list(data.values())
-                if all(isinstance(v, (int, float)) for v in values):
-                    plt.figure(figsize=(10, 6))
-                    plt.bar(keys, values, color="skyblue")
-                    plt.xlabel("Keys")
-                    plt.ylabel("Values")
-                    plt.title("Visualization of API Response Data")
-                    plt.tight_layout()
-
-                    # Save plot to a bytes buffer
-                    buf = BytesIO()
-                    plt.savefig(buf, format="png")
-                    plt.close()
-                    buf.seek(0)
-                    img_base64 = base64.b64encode(buf.read()).decode("utf-8")
-                    # Embed image in HTML
-                    img_html = f'<img src="data:image/png;base64,{img_base64}" alt="Visualization"/>'
-                    return f"{json.dumps(data, indent=2)}\n\n{img_html}"
+            # if isinstance(data, dict):
+            # Example: Create a bar chart if data contains numerical values
+            # keys = list(data.keys())
+            # values = list(data.values())
             # If not applicable for visualization, return the raw response
             return response
         except json.JSONDecodeError:

@@ -25,7 +25,7 @@ class LanguageModel:
         self.prompt_template = PromptTemplate(
             template="""Question: {question}
 
-Answer: Let's think step by step.""",
+            Answer: Let's think step by step.""",
             input_variables=["question"],
         )
         # Initialize AI21ContextualAnswers if needed
