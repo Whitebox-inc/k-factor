@@ -17,7 +17,7 @@ JAMBA_API_KEY = os.environ.get("JAMBA_API_KEY")
 class LanguageModel:
     """Abstracts interactions with the JAMBA language model using langchain_ai21."""
 
-    def __init__(self, api_key: str, model_name: str = "j2-ultra"):
+    def __init__(self, api_key: str, model_name: str = "jamba-1.5-large"):
         self.api_key = api_key
         self.model_name = model_name
         self.llm = AI21LLM(model=model_name, api_key=self.api_key)
@@ -80,7 +80,7 @@ class ExecuteRequestNode(Node):
         self, endpoint: str, method: str, headers: dict, params: dict, data: dict = None
     ) -> Result:
         try:
-            base_url = "https://api.example.com"  # Replace with the actual base URL or make it configurable
+            base_url = "localhost:3000"  # Replace with the actual base URL or make it configurable
             url = f"{base_url}{endpoint}"
             response = requests.request(
                 method, url, headers=headers, params=params, json=data
