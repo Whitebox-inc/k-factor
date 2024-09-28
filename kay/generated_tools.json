@@ -1,0 +1,14 @@
+[
+    {
+        "name": "get_getdata",
+        "description": "Retrieves data based on the query and limit.",
+        "endpoint": "/getData",
+        "method": "GET"
+    },
+    {
+        "name": "post_submitdata",
+        "description": "Submits data to the server.",
+        "endpoint": "/submitData",
+        "method": "POST"
+    }
+]
