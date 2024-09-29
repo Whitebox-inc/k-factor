@@ -4,7 +4,8 @@ __pycache__/
 *$py.class
 
 backend/context/keys.json
-
+backend/context/agentDir/
+backend/context/downloads_old/
 # C extensions
 *.so
 
