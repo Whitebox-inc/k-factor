@@ -10,3 +10,4 @@ pytest-mock
 python-dotenv
 matplotlib
 pandas
+networkx

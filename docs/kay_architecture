@@ -1,0 +1,37 @@
+// Kay Agent Architecture
+digraph {
+	rankdir=TB
+	node [fillcolor=lightblue shape=box style="rounded,filled"]
+	user [label="User Input" fillcolor=lightgreen shape=ellipse]
+	kay [label="Kay Agent
+(LangChain Agent)"]
+	llm [label="AI21 LLM
+(Language Model)"]
+	tools [label="Tool Registry"]
+	memory [label="Conversation Memory"]
+	subgraph cluster_0 {
+		fillcolor=lightgrey label="Tool Generation Pipeline" style=rounded
+		asi_repl [label="ASI REPL
+Generator"]
+		api_docs [label="API Documentation"]
+		tools_json [label="generated_tools.json"]
+		api_docs -> asi_repl
+		asi_repl -> tools_json
+	}
+	subgraph cluster_1 {
+		fillcolor=lightgrey label="Request Handling" style=rounded
+		execute [label="Execute Request"]
+		api [label="External API"]
+		response [label="Process Response"]
+		execute -> api
+		api -> response
+	}
+	user -> kay [label=input]
+	kay -> llm [label=prompt]
+	llm -> kay [label=response]
+	kay -> tools [label="use tools"]
+	kay -> memory [label="store/retrieve"]
+	tools_json -> tools [label=load]
+	tools -> execute [label="execute tool"]
+	response -> kay [label="tool result"]
+}
